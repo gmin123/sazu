@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   
+    <style>
+        .navbar{
+            background-color: #FFFFFF;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid black;
+        }
+    .title{
+        text-align: left;
+        
+    background-color: #FFFFFF;
+font: normal normal bold 30px/40px HYPMokGak;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+    }
+        .chat-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+
+        .chat-box {
+            background-color:#FFFFFF;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow-y: scroll;
+            height: 600px;
+        }
+
+        .chat-message {
+            background-color: #a9a2a2a1;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-message p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-input {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+      
+
+        .assistant {
+            color: blue;
+        }
+
+        .intro-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro-container img {
+            width: 50%;
+            min-width: 300px;
+        }
+
+        #loader {
+            font-size: 25px;
+            text-align: center;
+        }
+        .sazulogo{
+            height: 45px; margin-left: 20px;
+          
+        } 
+        .sazucon{
+            max-width: 950px;
+            align-self: center;
+            margin: 0 auto;
+            background-color:#F2F2F2;
+        }
+        select {
+            background-color: black; /* 배경색 설정 */
+            color: white; /* 글자색 설정 */
+            padding: 5px 10px; /* 패딩으로 크기 조절 */
+            font-size: 20px; /* 폰트 크기 조절 */
+            border-radius: 10px;
+        }
+
+        option {
+            background-color: black; /* 배경색 설정 */
+            color: white; /* 글자색 설정 */
+            font-size: 18;
+        }
+        .textcon{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="sazucon">
+    <div class="navbar">
+      
+        <img src="image/logo.png" class="sazulogo"
+       
+       ><p1 class="title">천인사주</p1>
+    </div>
+  
+
+ 
+  
+  <div class="sazucon">
+
+   <div style=" font: normal normal bold 16px/24px Noto Sans CJK KR;
+   font-size: 20px; margin-left: 20px; padding-top: 16px;">
+   <p2 >
+    명리학 AI로 알아보는 <br>
+    스마트운세</p2> <hr></div>
+           <div class="textcon">
+   <p1 style="font-weight: 800; font-size: 18px;">성별</p1>    <br>
+  <select id="sex">
+   
+    <option value="남자"> 남자</option>
+    <option value="여자"> 여자</option>
+  </select> 
+  <p ><a href="https://toss.me/천인사주에이아이"> 돈내놔임마</p></a>
+  <div style="height: 16px;"></div>
+    <form id="dateForm">
+        <label for="year"  onclick="yearSelect" style="font-weight: 800; font-size: 18px;">년:</label>
+        <select id="year" name="year">
+           
+        </select>
+    
+        <label for="month"  onclick="monthSelect"style="font-weight: 800; font-size: 18px;">월:</label>
+        <select id="month" name="month">
+           
+        </select>
+    
+        <label for="day"  onclick="daySelect" style="font-weight: 800; font-size: 18px;">일:</label>
+        <select id="day" name="day">
+            <!-- 자바스크립트로 일 옵션 채워짐 -->
+        </select>
+        <br>
+
+        <p1 style="font-weight: 800; font-size: 18px;">태어난시간</p1>
+
+        <select name="hour" id="hour">
+            <option value="시간은모름" selected="">시간 모름</option>
+            <option value=",0시">조자/朝子 (00:00~01:29)</option>
+            <option value=",2시">축/丑 (01:30~03:29)</option>
+            <option value=",4시">인/寅 (03:30~05:29)</option>
+            <option value=",6시">묘/卯 (05:30~07:29)</option>
+            <option value=",8시">천/辰 (07:30~09:29)</option>
+            <option value=",10시">사/巳 (09:30~11:29)</option>
+            <option value=",12시">오/午 (11:30~13:29)</option>
+            <option value=",14시">미/未 (13:30~15:29)</option>
+            <option value=",16시">신/申 (15:30~17:29)</option>
+            <option value=",18시">유/酉 (17:30~19:29)</option>
+            <option value=",20시">술/戌 (19:30~21:29)</option>
+            <option value=",22시">해/亥 (21:30~23:29)</option>
+            <option value=",23시">야자/夜子 (23:30~23:59)</option></select>
+        <input type="button" onclick="submitDate()" value="날짜 확인">
+    </form>
+
+</div>
+  <div id="chat" class="chat-container" >
+    <div class="chat-box">
+        <div class="chat-message">
+            <p class="assistant">궁금하신 모든걸 물어보세요!</p>
+        </div>
+    </div>
+    <div id="loader" class="loader" >
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    <div class="chat-input">
+        <input type="text" placeholder="사주,궁합,금전,부동산,주식,로또 뭐든물어보세요">
+        <button id="btn" onclick="spinner()">ai한테 사주보기</button>
+    </div>
+
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 년, 월, 일 옵션 채우기
+        const yearSelect = document.getElementById('year');
+        for (let i = 1920; i <= 2024; i++) {
+            yearSelect.options.add(new Option(i, i));
+        }
+        const monthSelect = document.getElementById('month');
+        for (let i = 1; i <= 12; i++) {
+            monthSelect.options.add(new Option(i, i));
+        }
+        const daySelect = document.getElementById('day');
+        for (let i = 1; i <= 31; i++) {
+            daySelect.options.add(new Option(i, i));
+        }
+    
+    });
+
+    function submitDate() {
+        var year = document.getElementById('year').value;
+        var month = document.getElementById('month').value;
+        var day = document.getElementById('day').value;
+        var hour = document.getElementById('hour').value;
+        var sex = document.getElementById('sex').value;
+        myDateTime = year + month + day + hour;
+        sex=sex;
+
+        
+    console.log(myDateTime, sex);
+    }
+
+    function toggleDrawer() {
+        var drawer = document.querySelector('.drawer');
+        if (drawer.style.left === '0px') {
+            drawer.style.left = '-250px';
+        } else {
+            drawer.style.left = '0px';
+        }
+    }
+
+   
+    function spinner() {
+        document.getElementById('loader').style.display = "block";
+    }
+    const chatBox = document.querySelector('.chat-box');
+        let userMessages = [];
+        let assistantMessages = [];
+        let threadId = ''
+        let myDateTime = ''
+
+        function spinner() {
+            document.getElementById('loader').style.display = "block";
+        }
+
+      
+        const sendMessage = async () => {
+            const chatInput = document.querySelector('.chat-input input');
+            const chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.innerHTML = `
+    <p>${chatInput.value}</p>
+  `;
+            chatBox.appendChild(chatMessage);
+            
+            //userMessage 메세지 추가
+            userMessage = chatInput.value;
+
+            chatInput.value = '';
+
+            const response = await fetch('http://localhost:3000/fortuneTell', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    myDateTime: myDateTime,
+                    userMessage: userMessage,
+                    threadId: threadId
+                })
+            });
+
+            const data = await response.json();
+            document.getElementById('loader').style.display = "none";
+            
+            //assistantMessage 메세지 추가
+            assistantMessages.push(data.assistant);
+            threadId = data.threadId;
+
+            const astrologerMessage = document.createElement('div');
+            astrologerMessage.classList.add('chat-message');
+            astrologerMessage.innerHTML = `
+    <p class='assistant'>${data.assistant}</p>
+  `;
+            chatBox.appendChild(astrologerMessage);
+        };
+
+        document.querySelector('.chat-input button').addEventListener('click', sendMessage);
+</script>
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>

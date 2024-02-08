@@ -1,0 +1,246 @@
+
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.drawer-toggle {
+    margin-right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.drawer {
+    position: fixed;
+    top: 50px; /* 타이틀 바 바로 아래 */
+    left: -250px; /* 기본적으로 숨겨짐 */
+    width: 250px;
+    height: 100%;
+    background: #eee;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: left 0.3s;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+.main{
+    top: 79px;
+left: 336px;
+width: 1100px;
+height: 307px;
+/* UI Properties */
+position: absolute;
+z-index: 100;
+
+box-shadow: 0px 8px 6px #00000029;
+border-radius: 16px;
+opacity: 1;z-index: 3;
+left: 50%; /* 부모 컨테이너의 중앙에 위치 */
+transform: translateX(-50%); /* 요소의 너비의 반만큼 왼쪽으로 이동 */
+}
+
+.title{
+    top: 17px;
+left: 390px;
+width: 120px;
+height: 30px;
+/* UI Properties */
+text-align: left;
+font: normal normal bold 30px/40px HYPMokGak;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+z-index: 1;
+}
+.mainback{
+    position: absolute;
+    top: 50px;
+left: 320px;
+width: 1280px;
+height: 480px;
+/* UI Properties */
+align-self:center;
+background: #4A517D 0% 0% no-repeat padding-box;
+opacity: 1;z-index: 2;
+left: 50%; /* 부모 컨테이너의 중앙에 위치 */
+transform: translateX(-50%); /* 요소의 너비의 반만큼 왼쪽으로 이동 */
+}
+.bt{text-align: left;
+    font: normal normal 900 30px/44px Noto Sans CJK KR;
+    letter-spacing: 0px;
+    color: #000000;
+    text-align: left;
+    
+    opacity: 1;}
+
+    .btsub{text-align: left;
+        font: normal normal bold 20px/29px Noto Sans CJK KR;
+        letter-spacing: 0px;
+        color: #000000;
+        text-align: left;
+        opacity: 1;}
+
+
+        .con {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+        }
+        @media screen and (max-width: 800px) {
+            .con {
+               max-width: 800;
+               overflow: hidden;
+            }
+        }
+
+        #chat-container {
+            width: 300px;
+            margin: auto;
+            background-color: #f3f3f3;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        #chat-box {
+            height: 200px;
+            border: 1px solid #aaa;
+            margin-bottom: 10px;
+            overflow-y: auto;
+        }
+        
+        #chat-input {
+            width: 70%;
+            padding: 5px;
+        }
+        
+        #send-button {
+            width: 25%;
+            padding: 5px;
+        }
+        .brown-background {
+            
+            background: #7A0F0F;
+            border-radius: 37px;
+            margin-top: 20px;
+            opacity: 1;
+            width: 65%;
+            height: 72px;
+        position:relative ;
+        margin: 20px auto; 
+            z-index: 1; /* 필요한 경우 z-index 조정 */
+            text-align: center; /* Center horizontally */
+line-height: 72px;
+        }
+
+        .fotter{
+            height: 250px;
+            width: 68%;
+            background: #66718F 0% 0% no-repeat padding-box;
+opacity: 0.89;
+margin: 0 auto; 
+        }
+
+        
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 60px; /* 타이틀 바 아래 여백 */
+    margin-bottom: 200px;
+    top: 400px;
+    z-index: 3
+    ;
+   
+
+    margin: auto;
+}
+@media screen and (max-width: 700px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 단일 열로 변경 */
+    }
+}
+.grid-item {
+    display: flex; /* Flexbox 레이아웃을 적용합니다. */
+    justify-content: space-between; /* 요소들을 양 끝으로 정렬합니다. */
+    align-items: center; /* 요소들을 세로축 중앙에 정렬합니다. */
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 6px #00000029;
+    border-radius: 11px;
+    opacity: 1;
+    width: 500px;
+    height: 200px;
+}
+
+.circle {
+    margin-left: auto; /* 원을 오른쪽 끝으로 이동시킵니다. */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: tomato;
+}
+.grid-image{
+    max-width: 100%; /* 이미지의 최대 너비 설정 */
+    height: auto;
+    align-items: center; /* 수직 중앙 정렬 */
+    overflow: hidden; 
+    display: flex;
+    object-fit: contain; 
+    position: absolute;
+    transform: translate(-50%, -50%);  top: 50%;
+    left: 50%;
+    object-fit: cover; /* 이미지가 컨테이너를 덮으면서도 비율이 유지되도록 함 */
+    object-position: center; 
+    width: 100%; /* 이미지의 너비를 컨테이너의 100%로 설정 */
+    height: 100%;
+}
+.text-container {
+    display: flex; /* Flexbox 레이아웃을 사용 */
+    flex-direction: column; /* 요소들을 세로로 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    align-items: center;}
+   
+    .sazucon{
+        width: 75%;
+        overflow:hidden ;
+    }
+    #chatBox {
+        width: 300px;
+        border: 1px solid #000;
+        padding: 10px;
+        margin: 20px;
+    }
+    
+    #messages {
+        height: 150px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+    
+    #userInput {
+        width: calc(100% - 22px);
+        padding: 5px;
+    }
